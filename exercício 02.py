@@ -1,5 +1,5 @@
 
-dia =''
+#olá, eu não pude comparecer na ultima aula, conversei com o pessoa sobre o assunto que foi abordado e fiz um pequeno exercicio com if, elif e else.
 
 
 dia = input('Que dia é hoje ?')
@@ -17,8 +17,10 @@ elif  dia == 'quinta' or dia == 'quinta-feira' or dia == 'quinta feira' :
     print( 'Amanhã é sextaaa, aguenta mais um pouco!' )
 
 elif dia == 'sexta' or dia == 'sexta-feira' or dia == 'sexta feira':
-    print( 'HOJE É SEXTA FEIRAAA, LARGOU JA ERA, DIRETO PRA CASA DORMIR QUE TAS CANSADE' )
+    print( 'HOJE É SEXTA FEIRAAA, LARGOU JA ERA, DIRETO PRA CASA DORMIR QUE TAS CANSADE.' )
 
+else :
+    print( 'Bom final de semana.' )
 
     #  = == === , / % /= , < <= >= > 
 
