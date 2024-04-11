@@ -7,7 +7,7 @@ class App():
         self.tela()
         self.frames_da_tela()
         self.Construtor_botões()
-
+        self.Caixa_texto()
 
 
         root.mainloop()
@@ -23,10 +23,10 @@ class App():
     def frames_da_tela(self):
         self.frame_1 = Frame (self.root, bd = 4, bg = '#d9ed92',
                             highlightbackground= '#34a0a4', highlightthickness=3 )
-        self.frame_1.place(relx= 0.02 , rely=0.2, relwidth= 0.96,relheight= 0.40)
+        self.frame_1.place(relx= 0.02 , rely=0.01, relwidth= 0.96,relheight= 0.40)
         self.frame_2 = Frame (self.root, bd = 4, bg = '#d9ed92',
                             highlightbackground= '#34a0a4', highlightthickness=3 )
-        self.frame_2.place(relx= 0.02 , rely=0.65, relwidth= 0.96,relheight= 0.40)
+        self.frame_2.place(relx= 0.02 , rely=0.44, relwidth= 0.96,relheight= 0.40)
     #construtor de botões
     def Construtor_botões(self):
         #botâo de executar
@@ -38,7 +38,20 @@ class App():
         #botão sair
         self.bt_proximo = Button(self.root, text = 'Sair')
         self.bt_proximo.place ( relx = 0.02, rely = 0.87, relwidth = 0.09, relheight = 0.08)
-
+    
+    def Caixa_texto(self) :
+        #texto de instrução da primeira tela
+        self.texto = Label(self.frame_1, text = "Informe dois números inteiros e um número real.", background = '#d9ed92')
+        self.texto.place ( relx = 0.0, rely = 0.010, relwidth = 0.3, relheight = 0.1 )
+        #texto numero 1
+        self.texto01 = Label(self.frame_1, text = "Valor inteiro", background = '#d9ed92')
+        self.texto01.place ( relx = 0.3, rely = 0.010, relwidth = 0.3, relheight = 0.1 )
+        #texto numero 2
+        self.texto02 = Label(self.frame_1, text = "Valor inteiro", background = '#d9ed92')
+        self.texto02.place ( relx = 0.5, rely = 0.010, relwidth = 0.3, relheight = 0.1 )
+        #texto numero 3
+        self.texto03 = Label(self.frame_1, text = "Valor real", background = '#d9ed92')
+        self.texto03.place ( relx = 0.7, rely = 0.010, relwidth = 0.3, relheight = 0.1 )
 
 
 
