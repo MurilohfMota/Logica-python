@@ -33,7 +33,7 @@ class App() :
     #construtor de botões
     def Construtor_botões(self):
         #botâo de executar
-        self.bt_executar = Button(self.frame_1, text = 'Executar', bd = 2 , bg = '#184e77', fg = '#d9ed92', font = ('firacode', 12), command = self.fx01)
+        self.bt_executar = Button(self.frame_1, text = 'Executar', bd = 2 , bg = '#184e77', fg = '#d9ed92', font = ('firacode', 12), command = self.Executar)
         self.bt_executar.place ( relx = 0.9, rely = 0.85, relwidth = 0.1, relheight = 0.15)
 
         #botão sair
@@ -42,16 +42,16 @@ class App() :
     
     def Caixa_texto(self) :
         #texto de instrução da primeira tela
-        self.texto = Label(self.frame_1, text = f"Informe dois números inteiros e um número real.\n Por favor preencha todos os Campos\n OBS: use \".\" para separar as casas decimais", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
+        self.texto = Label(self.frame_1, text = f"Informe três números.\n Por favor preencha todos os Campos\n OBS: use \".\" para separar as casas decimais", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
         self.texto.place ( relx = 0.0, rely = 0.010, relwidth = 0.3, relheight = 0.24 )
         #texto numero 1
-        self.texto01 = Label(self.frame_1, text = "Primeiro inteiro", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
+        self.texto01 = Label(self.frame_1, text = "Primeiro número", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
         self.texto01.place ( relx = 0.3, rely = 0.010, relwidth = 0.3, relheight = 0.1 )
         #texto numero 2
-        self.texto02 = Label(self.frame_1, text = "Segundo inteiro", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
+        self.texto02 = Label(self.frame_1, text = "Segundo número", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
         self.texto02.place ( relx = 0.5, rely = 0.010, relwidth = 0.3, relheight = 0.1 )
         #texto numero 3
-        self.texto03 = Label(self.frame_1, text = "Valor real", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
+        self.texto03 = Label(self.frame_1, text = "Terceiro número", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
         self.texto03.place ( relx = 0.7, rely = 0.010, relwidth = 0.3, relheight = 0.1,  )
 
         #caixa de texto do resultado no frame_2
@@ -71,23 +71,41 @@ class App() :
         self.entrada03 = Entry(self.frame_1)
         self.entrada03.place ( relx = 0.80, rely = 0.10, relwidth = 0.1, relheight = 0.1 )
     #Definir  funcções do back
-    def fx01(self) : 
+    def Executar(self) : 
+    #questão 5)
+        self.num01 = float (self.entrada01.get())
+        self.num02 = float (self.entrada02.get())
+        self.num03 = float (self.entrada03.get())
+        self.maiornum = 0 
+        self.igual1 = FALSE
+        self.igual2 = FALSE
+        #primeira etapa, definir o maior numero entre o numero 1 e o numero 2
+        if self.num01 > self.num02 : 
+            self.maiornum = self.num01
         
-        if (self.entrada01 != NONE and self.entrada02 != NONE and self.entrada03 != NONE) :
-            self.int01 = int (self.entrada01.get())
-            self.int02 = int (self.entrada02.get())
-            self.float01 = float (self.entrada03.get())
+        elif self.num01 < self.num02 : 
+            self.maiornum = self.num02
 
-            #questão 1) a)
-            self.resultado_a = ((self.int01 * 2) * (self.int02/2))
+        elif self.num01 == self.num02 : #se num01 e num02 não são maiores ou menores entre si, então eles são iguais. logo vou usar qualquer um deles
+            self.maiornum = self.num01
+            self.igual1 = TRUE
+        #segunda etapa, definir o maior numero entre o maior numero atual e o numero 3
 
-            #questão 1) b)
-            self.resultado_b = ((self.int01 **3 )+ self.float01 )
+        if self.maiornum > self.num03 :
+            label_var.set(f'{self.maiornum} é o maior número!')
 
+        elif self.maiornum < self.num03 :
+            self.maiornum = self.num03
+            label_var.set(f'{self.maiornum} é o maior número!')
 
-            label_var.set(f'O produto do dobro do primeiro pela metade do segundo é {self.resultado_a}\nA soma do tripo do primeiro com o terceiro é {self.resultado_b}')
-        else :
-            label_var.set(f'Por favor, preencha todos os campos.')
+        elif self.maiornum == self.num03 :
+            self.igual2 = TRUE
+            if self.igual1 == TRUE :
+                label_var.set(f'os três números são iguais')
+            
+
+           
+        
 
 
 

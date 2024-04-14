@@ -41,7 +41,7 @@ class App() :
     
     def Caixa_texto(self) :
         #texto de instrução da primeira tela
-        self.texto = Label(self.frame_1, text = f"Informe suas notas.\n Por favor preencha todos os Campos\n OBS: use \".\" para separar as casas decimais", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
+        self.texto = Label(self.frame_1, text = f"Informe suas notas.\n Por favor preencha todos os Campos.\n OBS: use \".\" para separar as casas decimais", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
         self.texto.place ( relx = 0.0, rely = 0.010, relwidth = 0.3, relheight = 0.24 )
         #texto numero 1
         self.texto01 = Label(self.frame_1, text = "Primeira nota", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
