@@ -41,12 +41,14 @@ class App() :
     
     def Caixa_texto(self) :
         #texto de instrução da primeira tela
-        self.texto = Label(self.frame_1, text = f"Informe um número.\n Por favor preencha todos os Campos", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
-        self.texto.place ( relx = 0.0, rely = 0.010, relwidth = 0.3, relheight = 0.17 )
+        self.texto = Label(self.frame_1, text = f"Informe suas notas.\n Por favor preencha todos os Campos\n OBS: use \".\" para separar as casas decimais", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
+        self.texto.place ( relx = 0.0, rely = 0.010, relwidth = 0.3, relheight = 0.24 )
         #texto numero 1
-        self.texto01 = Label(self.frame_1, text = "Digite um número", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
+        self.texto01 = Label(self.frame_1, text = "Primeira nota", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
         self.texto01.place ( relx = 0.3, rely = 0.010, relwidth = 0.3, relheight = 0.1 )
-        
+        #texto numero 2
+        self.texto02 = Label(self.frame_1, text = "Segunda nota", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
+        self.texto02.place ( relx = 0.5, rely = 0.010, relwidth = 0.3, relheight = 0.1 )
         
 
         #caixa de texto do resultado no frame_2
@@ -58,20 +60,23 @@ class App() :
         self.entrada01 = Entry(self.frame_1)
         self.entrada01.place ( relx = 0.40, rely = 0.10, relwidth = 0.1, relheight = 0.1 )
 
+        #campo valor inteiro 02
+        self.entrada02 = Entry(self.frame_1)
+        self.entrada02.place ( relx = 0.60, rely = 0.10, relwidth = 0.1, relheight = 0.1 )
+
     #Definir  funcções do back
     def Executar(self) : 
-        #calculo questão 03
-        self.int01 = int (self.entrada01.get())
-        
+        #calculo questão 02
+        self.nota01 = float (self.entrada01.get())
+        self.nota02 = float (self.entrada02.get())
             
 
-        #questão 3)
-        if self.int01 > 0 :
-            label_var.set(f'{self.int01} é positivo')
-        elif self.int01 < 0 :
-            label_var.set(f'{self.int01} é negativo')
-        else :
-            label_var.set(f'{self.int01} é neutro')
+        #questão 4)
+        self.resultado = ((self.nota01 + self.nota02)/2)
+        if self.resultado >= 7 : 
+            label_var.set(f'Parabens você foi Aprovado!')
+        else : 
+            label_var.set(f'Infelizmente você foi Reprovado')
         
 
 
