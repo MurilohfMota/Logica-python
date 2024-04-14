@@ -15,7 +15,7 @@ class App() :
         root.mainloop()
         
     def tela(self) :
-        self.root.title( "Lab 13/04 questão 01" ) 
+        self.root.title( "Lab 13/04 questão 02" ) 
         self.root.configure ( background="#184e77")
         self.root.geometry ( "1250x720" )
         self.root.resizable (True, True)
