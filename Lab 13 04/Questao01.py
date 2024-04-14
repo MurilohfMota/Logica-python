@@ -31,7 +31,7 @@ class App() :
                             highlightbackground= '#34a0a4', highlightthickness=3 )
         self.frame_2.place(relx= 0.02 , rely=0.44, relwidth= 0.96,relheight= 0.40)
     #construtor de botões
-    def Construtor_botões(self):
+    def Botoes(self):
         #botâo de executar
         self.bt_executar = Button(self.frame_1, text = 'Executar', bd = 2 , bg = '#184e77', fg = '#d9ed92', font = ('firacode', 12), command = self.fx01)
         self.bt_executar.place ( relx = 0.9, rely = 0.85, relwidth = 0.1, relheight = 0.15)

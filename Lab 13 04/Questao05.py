@@ -4,17 +4,17 @@ root = Tk()
 label_var = StringVar()
 label_var2 = StringVar()
 class App() :
-    #Definir telas e frames do front
+    #Definir janelas, telas e frames do front
     def __init__(self):
         self.root = root
         self.tela()
         self.frames_da_tela()
-        self.Construtor_botões()
+        self.Botoes()
         self.Caixa_texto()
         self.Widgets()
 
         root.mainloop()
-        
+    #Definir e configurar telas
     def tela(self) :
         self.root.title( "Lab 13/04 questão 05" ) 
         self.root.configure ( background="#184e77")
@@ -22,7 +22,7 @@ class App() :
         self.root.resizable (True, True)
         self.root.maxsize ( width = 1920, height = 1080 )
         self.root.minsize ( width = 720, height = 560 )
-
+    #Definir e configurar frames e setores da tela
     def frames_da_tela(self):
         self.frame_1 = Frame (self.root, bd = 4, bg = '#d9ed92',
                             highlightbackground= '#34a0a4', highlightthickness=3 )
@@ -30,8 +30,8 @@ class App() :
         self.frame_2 = Frame (self.root, bd = 4, bg = '#d9ed92',
                             highlightbackground= '#34a0a4', highlightthickness=3 )
         self.frame_2.place(relx= 0.02 , rely=0.44, relwidth= 0.96,relheight= 0.40)
-    #construtor de botões
-    def Construtor_botões(self):
+    #
+    def Botoes(self):
         #botâo de executar
         self.bt_executar = Button(self.frame_1, text = 'Executar', bd = 2 , bg = '#184e77', fg = '#d9ed92', font = ('firacode', 12), command = self.Executar)
         self.bt_executar.place ( relx = 0.9, rely = 0.85, relwidth = 0.1, relheight = 0.15)
