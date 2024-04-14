@@ -23,10 +23,12 @@ class App() :
         self.root.maxsize ( width = 1920, height = 1080 )
         self.root.minsize ( width = 720, height = 560 )
     #Definir e configurar frames e setores da tela
-    def frames_da_tela(self):
+    def frames_da_tela(self) :
+        #frame 1
         self.frame_1 = Frame (self.root, bd = 4, bg = '#d9ed92',
                             highlightbackground= '#34a0a4', highlightthickness=3 )
         self.frame_1.place(relx= 0.02 , rely=0.01, relwidth= 0.96,relheight= 0.40)
+        #frame 2
         self.frame_2 = Frame (self.root, bd = 4, bg = '#d9ed92',
                             highlightbackground= '#34a0a4', highlightthickness=3 )
         self.frame_2.place(relx= 0.02 , rely=0.44, relwidth= 0.96,relheight= 0.40)
@@ -44,12 +46,15 @@ class App() :
         #texto de instrução da primeira tela
         self.texto = Label(self.frame_1, text = f"Informe três números.\n Por favor preencha todos os Campos\n OBS: use \".\" para separar as casas decimais", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
         self.texto.place ( relx = 0.0, rely = 0.010, relwidth = 0.3, relheight = 0.24 )
+        
         #texto numero 1
         self.texto01 = Label(self.frame_1, text = "Primeiro número", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
         self.texto01.place ( relx = 0.3, rely = 0.010, relwidth = 0.3, relheight = 0.1 )
+        
         #texto numero 2
         self.texto02 = Label(self.frame_1, text = "Segundo número", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
         self.texto02.place ( relx = 0.5, rely = 0.010, relwidth = 0.3, relheight = 0.1 )
+        
         #texto numero 3
         self.texto03 = Label(self.frame_1, text = "Terceiro número", background = '#d9ed92', fg = '#184e77', font = ('firacode', 12))
         self.texto03.place ( relx = 0.7, rely = 0.010, relwidth = 0.3, relheight = 0.1,  )
@@ -57,6 +62,7 @@ class App() :
         #caixa de texto do resultado no frame_2
         self.texto_resultado = Label(self.frame_2, text = "", font = ('Firacode', 16), background = '#d9ed92', textvariable= label_var)
         self.texto_resultado.place ( relx = 0.0, rely = 0.010, relwidth = 0.9, relheight = 0.9 )
+    
     def Widgets(self) : 
         #criando campos de entrada de texto do usuario
         #campo valor inteiro 01
@@ -70,6 +76,7 @@ class App() :
         #campo valor inteiro 03
         self.entrada03 = Entry(self.frame_1)
         self.entrada03.place ( relx = 0.80, rely = 0.10, relwidth = 0.1, relheight = 0.1 )
+   
     #Definir  funcções do back
     def Executar(self) : 
     #questão 5)
@@ -79,16 +86,20 @@ class App() :
         self.maiornum = 0 
         self.igual1 = FALSE
         self.igual2 = FALSE
+        
         #primeira etapa, definir o maior numero entre o numero 1 e o numero 2
+
         if self.num01 > self.num02 : 
             self.maiornum = self.num01
         
         elif self.num01 < self.num02 : 
             self.maiornum = self.num02
 
-        elif self.num01 == self.num02 : #se num01 e num02 não são maiores ou menores entre si, então eles são iguais. logo vou usar qualquer um deles
+        elif self.num01 == self.num02 :
+            #se num01 e num02 não são maiores ou menores entre si, então eles são iguais. logo vou usar qualquer um deles
             self.maiornum = self.num01
             self.igual1 = TRUE
+       
         #segunda etapa, definir o maior numero entre o maior numero atual e o numero 3
 
         if self.maiornum > self.num03 :
