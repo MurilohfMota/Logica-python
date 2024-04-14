@@ -102,6 +102,8 @@ class App() :
             self.igual2 = TRUE
             if self.igual1 == TRUE :
                 label_var.set(f'os três números são iguais')
+            else :
+                label_var.set(f'{self.maiornum} é o maior número!')
             
 
            
