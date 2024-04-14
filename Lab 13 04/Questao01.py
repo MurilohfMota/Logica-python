@@ -9,7 +9,7 @@ class App() :
         self.root = root
         self.tela()
         self.frames_da_tela()
-        self.Construtor_botões()
+        self.Botoes()
         self.Caixa_texto()
         self.Widgets()
 
@@ -55,7 +55,7 @@ class App() :
         self.texto03.place ( relx = 0.7, rely = 0.010, relwidth = 0.3, relheight = 0.1,  )
 
         #caixa de texto do resultado no frame_2
-        self.texto_resultado = Label(self.frame_2, text = "", background = '#d9ed92', textvariable= label_var)
+        self.texto_resultado = Label(self.frame_2, text = "", font = ('Firacode', 16), background = '#d9ed92', textvariable= label_var)
         self.texto_resultado.place ( relx = 0.0, rely = 0.010, relwidth = 0.9, relheight = 0.9 )
     def Widgets(self) : 
         #criando campos de entrada de texto do usuario
