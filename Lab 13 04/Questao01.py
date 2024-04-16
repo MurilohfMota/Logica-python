@@ -74,7 +74,7 @@ class App() :
     def Executar(self) : 
         
     
-        self.int01 = int (self.entrada01.get())
+        self.int01 = int (self.entrada01.get()) 
         self.int02 = int (self.entrada02.get())
         self.float01 = float (self.entrada03.get())
 
