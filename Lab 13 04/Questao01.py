@@ -33,7 +33,7 @@ class App() :
     #construtor de botões
     def Botoes(self):
         #botâo de executar
-        self.bt_executar = Button(self.frame_1, text = 'Executar', bd = 2 , bg = '#184e77', fg = '#d9ed92', font = ('firacode', 12), command = self.fx01)
+        self.bt_executar = Button(self.frame_1, text = 'Executar', bd = 2 , bg = '#184e77', fg = '#d9ed92', font = ('firacode', 12), command = self.Executar)
         self.bt_executar.place ( relx = 0.9, rely = 0.85, relwidth = 0.1, relheight = 0.15)
 
         #botão sair
@@ -71,23 +71,22 @@ class App() :
         self.entrada03 = Entry(self.frame_1)
         self.entrada03.place ( relx = 0.80, rely = 0.10, relwidth = 0.1, relheight = 0.1 )
     #Definir  funcções do back
-    def fx01(self) : 
+    def Executar(self) : 
         
-        if (self.entrada01 != NONE and self.entrada02 != NONE and self.entrada03 != NONE) :
-            self.int01 = int (self.entrada01.get())
-            self.int02 = int (self.entrada02.get())
-            self.float01 = float (self.entrada03.get())
+    
+        self.int01 = int (self.entrada01.get())
+        self.int02 = int (self.entrada02.get())
+        self.float01 = float (self.entrada03.get())
 
-            #questão 1) a)
-            self.resultado_a = ((self.int01 * 2) * (self.int02/2))
+        #questão 1) a)
+        self.resultado_a = ((self.int01 * 2) * (self.int02/2))
 
-            #questão 1) b)
-            self.resultado_b = ((self.int01 **3 )+ self.float01 )
+        #questão 1) b)
+        self.resultado_b = ((self.int01 **3 )+ self.float01 )
 
 
-            label_var.set(f'O produto do dobro do primeiro pela metade do segundo é {self.resultado_a}\nA soma do tripo do primeiro com o terceiro é {self.resultado_b}')
-        else :
-            label_var.set(f'Por favor, preencha todos os campos.')
+        label_var.set(f'O produto do dobro do primeiro pela metade do segundo é {self.resultado_a}\nA soma do tripo do primeiro com o terceiro é {self.resultado_b}')
+        
 
 
 
